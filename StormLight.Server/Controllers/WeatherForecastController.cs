@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Thunder_head.Controllers;
+using StormLight.Models;
+
+namespace StormLight.Server.Controllers;
 
 [ApiController]
 [Route("[controller]")]

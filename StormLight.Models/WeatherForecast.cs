@@ -1,4 +1,4 @@
-namespace Thunder_head;
+﻿namespace StormLight.Models;
 
 public class WeatherForecast
 {
