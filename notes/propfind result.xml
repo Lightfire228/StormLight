@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<d:multistatus xmlns:d="DAV:"
+    xmlns:s="http://sabredav.org/ns"
+    xmlns:oc="http://owncloud.org/ns"
+    xmlns:nc="http://nextcloud.org/ns">
+    <d:response>
+        <d:href>/remote.php/dav/files/Cass/Test/test.code-workspace</d:href>
+        <d:propstat>
+            <d:prop>
+                <d:getlastmodified>Wed, 24 May 2023 18:28:37 GMT</d:getlastmodified>
+                <d:getetag>&quot;47d1b6b01f2f2c7e3d05c6d0a599f405&quot;</d:getetag>
+                <d:getcontenttype>application/octet-stream</d:getcontenttype>
+                <d:resourcetype/>
+                <oc:fileid>197652</oc:fileid>
+                <oc:permissions>RGDNVW</oc:permissions>
+                <oc:size>122</oc:size>
+                <d:getcontentlength>122</d:getcontentlength>
+                <nc:has-preview>false</nc:has-preview>
+                <nc:mount-type></nc:mount-type>
+                <x1:share-permissions xmlns:x1="http://open-collaboration-services.org/ns">19</x1:share-permissions>
+                <nc:share-attributes>[]</nc:share-attributes>
+                <oc:tags/>
+                <oc:favorite>0</oc:favorite>
+                <nc:system-tags/>
+                <oc:owner-id>Cass</oc:owner-id>
+                <oc:owner-display-name>Cass</oc:owner-display-name>
+                <oc:share-types/>
+                <oc:comments-unread>0</oc:comments-unread>
+            </d:prop>
+            <d:status>HTTP/1.1 200 OK</d:status>
+        </d:propstat>
+        <d:propstat>
+            <d:prop>
+                <d:quota-available-bytes/>
+                <nc:is-encrypted/>
+            </d:prop>
+            <d:status>HTTP/1.1 404 Not Found</d:status>
+        </d:propstat>
+    </d:response>
+</d:multistatus>

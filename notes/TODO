@@ -1,0 +1,21 @@
+
+[ ] file ownership "type" model?
+    - unique owner (server, client 1, client 2, etc)
+    - shared owner (syncing files)
+
+    server enforces rules based on ownership types
+    certain actions cause ownership changes
+        upload                -> server owner
+        delete                -> client_2 owner; file deleted
+        file editing          -> client_01 owner
+        collaborative editing -> shared owner between clients
+        syncing               -> shared owner between clients
+        last session closes   -> server becomes owner by default
+
+[ ] store filesystem state purely in the DB
+    store file contents in a folder and file based on the file id Guid 
+    for example, file guid: a218e589-04a2-475a-a13a-d40743fc2893
+
+    would be in /store/files/user_id/a2/18e589-04a2-475a-a13a-d40743fc2893
+    this both makes file lookup quick
+    and files evenly spread across folders, and doesn't make any folders particularly huge

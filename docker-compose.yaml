@@ -4,5 +4,10 @@ services:
     restart: always
     volumes:
       - db:/var/lib/postgresql/data:Z
+    ports:
+      - 5432:5432
     env_file:
       - db.env
+
+volumes:
+  db:

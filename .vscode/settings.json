@@ -1,0 +1,20 @@
+{
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "Q",
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "Q": {
+            "icon":       "question",
+            "type":       "tag",
+            // "background": "#4300e0",
+            "foreground": "#af8383",
+        }
+    }
+}
