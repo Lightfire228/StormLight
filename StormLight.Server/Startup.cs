@@ -1,52 +1,37 @@
-using StormLight.Database;
-
-namespace StormLight.Server;
-
-public class Startup {
-
-    public IConfiguration   Configuration { get; }
-    public IHostEnvironment Env           { get; }
-
-    public Startup(IConfiguration config, IWebHostEnvironment env) {
-        Configuration = config;
-        Env           = env;
-    }
-
-    public void ConfigureServices(IServiceCollection services) {
-
-    }
-
-    public void Configure(
-        IApplicationBuilder app,
-        IHostEnvironment    env,
-        IServiceProvider    serviceProvider,
-        ILogger<Startup>    logger
-    ) {
 
 
+using Minio;
+using Minio.DataModel;
+using StormLight.Models;
+using StormLight.Storage;
+using StormLight.Storage.S3;
 
-        // Configure the HTTP request pipeline.
-        if (env.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+public static class Startup {
 
-        using (var scope = serviceProvider.CreateScope()) {
-            var services = scope.ServiceProvider;
+    public static void Services(WebApplicationBuilder builder) {
 
-            var context = services.GetRequiredService<StormLightContext>();
-            context.Database.EnsureCreated();
-        }
+        var secrets = builder.Configuration.GetSection("Secrets").Get<Secrets>();
 
-        // app.
+        ArgumentNullException.ThrowIfNull(secrets);
+        ArgumentNullException.ThrowIfNull(secrets.Storage);
 
-        app.UseHttpsRedirection();
+        var services = builder.Services;
 
-        app.UseAuthorization();
+        services.AddControllers();
         
-        app.UseEndpoints(e => e.MapControllers());
-    }
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen();
 
+        services.AddMinio(client => 
+            client
+                .WithEndpoint   (secrets.Storage.Endpoint)
+                .WithCredentials(secrets.Storage.AccessKey, secrets.Storage.SecretKey)
+                .Build()
+        );
+
+        
+        services.AddScoped<IStorage<ProgressReport>, S3Storage>();
+    }
 
 }

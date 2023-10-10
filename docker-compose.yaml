@@ -9,5 +9,21 @@ services:
     env_file:
       - db.env
 
+  storage:
+    image: quay.io/minio/minio
+
+    ports:
+      - 9000:9000
+      - 9090:9090
+    
+    volumes:
+      - storage:/data
+    
+    env_file:
+      - storage.env
+
+    command: server /data --console-address ":9090"
+
 volumes:
   db:
+  storage:

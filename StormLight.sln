@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormLight.Models", "StormL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormLight.Database", "StormLight.Database\StormLight.Database.csproj", "{7C7526B0-95FA-4B7B-963B-B9EC04BD0816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormLight.Storage", "StormLight.Storage\StormLight.Storage.csproj", "{2C0A3184-274B-40C9-8782-107CF43624D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{7C7526B0-95FA-4B7B-963B-B9EC04BD0816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C7526B0-95FA-4B7B-963B-B9EC04BD0816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C7526B0-95FA-4B7B-963B-B9EC04BD0816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0A3184-274B-40C9-8782-107CF43624D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0A3184-274B-40C9-8782-107CF43624D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0A3184-274B-40C9-8782-107CF43624D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0A3184-274B-40C9-8782-107CF43624D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

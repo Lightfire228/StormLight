@@ -12,6 +12,8 @@
         syncing               -> shared owner between clients
         last session closes   -> server becomes owner by default
 
+    read permissions not affected by ownership?
+
 [ ] store filesystem state purely in the DB
     store file contents in a folder and file based on the file id Guid 
     for example, file guid: a218e589-04a2-475a-a13a-d40743fc2893

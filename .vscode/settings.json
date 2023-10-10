@@ -16,5 +16,13 @@
             // "background": "#4300e0",
             "foreground": "#af8383",
         }
+    },
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:StormLight-Server}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
     }
 }
